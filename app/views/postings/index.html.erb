@@ -17,8 +17,9 @@
           <span class="fa fa-map-marker"></span> <%= posting.location %>
         </a>
         <p><%= truncate(posting.description, length: 140, seperator: ' ') %></p>
-        <button class="btn btn-block hidden-lg">Explore <span class="fa fa-expand"></span></button>
-        <button class="btn btn-primary pull-right hidden-xs hidden-sm hidden-md">Explore <span class="fa fa-expand"></span></button>
+
+        <a href="<%= posting_path(posting.id) %>" class="btn btn-primary btn-block hidden-lg" type="button">Explore <span class="fa fa-expand"></span></a>
+        <a href="<%= posting_path(posting.id) %>" class="btn btn-primary pull-right hidden-xs hidden-sm hidden-md" type="button">Explore <span class="fa fa-expand"></span></a>
       </div>
     </section>
   <% end %>

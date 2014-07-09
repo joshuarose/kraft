@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root "postings#index"
+
+  get "postings/:id" => "postings#show", as: :posting
 end
