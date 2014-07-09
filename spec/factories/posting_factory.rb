@@ -6,6 +6,6 @@ FactoryGirl.define do
     company_name  Faker::Company.name
     position_name Faker::Name.title
     location Faker::Address.street_address
-    description Faker::Company.bs
+    description Faker::Lorem.sentence()
   end
 end

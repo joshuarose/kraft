@@ -18,10 +18,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$accent: #d3d3d3;
+
 .career {
 	margin-top: 20px;
 	padding-bottom: 20px;
-	border-bottom: dashed 2px #e7e7e7;
+	border-bottom: dashed 2px lighten($accent, 5%);
 }
 
 .label-group>.label {

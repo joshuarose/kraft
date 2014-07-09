@@ -5,9 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-require 'factory_girl_rails'
+require 'faker'
 
 10.times do
-  FactoryGirl.create :posting
+  posting = Posting.new
+  posting.workspace_image = Faker::Company.logo
+  posting.company_name = Faker::Company.name
+  posting.position_name = Faker::Name.title
+  posting.location = Faker::Address.street_address
+  posting.description = Faker::Lorem.paragraph(5)
+  posting.save
 end

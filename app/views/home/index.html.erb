@@ -1,5 +1,5 @@
 <div class="container" id="about">
-  <%= @postings.each do |posting| %>
+  <% @postings.each do |posting| %>
     <section class="career col-lg-12">
       <div class="col-lg-3">
         <img src=<%= posting.workspace_image %> class="img-responsive" alt="workspace-image" />
@@ -16,7 +16,7 @@
         <a href="#">
           <span class="fa fa-map-marker"></span> <%= posting.location %>
         </a>
-        <p><%= truncate(posting.description, length: 140) %></p>
+        <p><%= truncate(posting.description, length: 140, seperator: ' ') %></p>
         <button class="btn btn-block hidden-lg">Explore <span class="fa fa-expand"></span></button>
         <button class="btn btn-primary pull-right hidden-xs hidden-sm hidden-md">Explore <span class="fa fa-expand"></span></button>
       </div>
