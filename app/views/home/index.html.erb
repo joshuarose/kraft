@@ -1,27 +1,25 @@
 <div class="container" id="about">
-
-      <section class="career col-lg-12">
-        <div class="col-lg-3">
-          <img src="http://www.inc.com/sites/default/files/imagecache/preview/slideshows/getaround.jpg" class="img-responsive" alt="uc" />
-          <div class="label-group">
-            <span class="label label-success">Skills</span>
-            <span class="label label-warning">Level</span>
-            <span class="label label-success">Location</span>
-            <span class="label label-danger">Culture</span>
-          </div>
+  <%= @postings.each do |posting| %>
+    <section class="career col-lg-12">
+      <div class="col-lg-3">
+        <img src=<%= posting.workspace_image %> class="img-responsive" alt="workspace-image" />
+        <div class="label-group">
+          <span class="label label-success">Skills</span>
+          <span class="label label-warning">Level</span>
+          <span class="label label-success">Location</span>
+          <span class="label label-danger">Culture</span>
         </div>
-        <div class="col-lg-9">
-          <h2>University of Cincinnati</h2>
-          <strong>Software Engineer</strong>&nbsp;
-          <a href="#">
-            <span class="fa fa-map-marker"></span> Cincinnati, Oh
-          </a>
-          <p>The University of Cincinnati is actively seeking software engineers with unique backgrounds in systems, programming, and networking to assist in building out the large...</p>
-          <button class="btn btn-block hidden-lg">Explore <span class="fa fa-expand"></span></button>
-          <button class="btn btn-primary pull-right hidden-xs hidden-sm hidden-md">Explore <span class="fa fa-expand"></span></button>
-        </div>
-      </section>
-
-
-
-    </div>
+      </div>
+      <div class="col-lg-9">
+        <h2><%= posting.company_name %></h2>
+        <strong><%= posting.position_name %></strong>&nbsp;
+        <a href="#">
+          <span class="fa fa-map-marker"></span> <%= posting.location %>
+        </a>
+        <p><%= truncate(posting.description, length: 140) %></p>
+        <button class="btn btn-block hidden-lg">Explore <span class="fa fa-expand"></span></button>
+        <button class="btn btn-primary pull-right hidden-xs hidden-sm hidden-md">Explore <span class="fa fa-expand"></span></button>
+      </div>
+    </section>
+  <% end %>
+</div>
